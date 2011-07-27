@@ -946,7 +946,7 @@ It will be cleared at start of next `anything' call when \
 (define-key anything-command-map (kbd "C-x C-w") 'anything-write-file)
 (define-key anything-command-map (kbd "C-x i") 'anything-insert-file)
 (define-key anything-command-map (kbd "M-s o") 'anything-occur)
-(define-key anything-command-map (kbd "M-g s") 'anything-do-grep)
+;; (define-key anything-command-map (kbd "M-g s") 'anything-do-grep)
 (define-key anything-command-map (kbd "c") 'anything-colors)
 (define-key anything-command-map (kbd "F") 'anything-select-xfont)
 (define-key anything-command-map (kbd "C-c f") 'anything-recentf)
@@ -2085,8 +2085,8 @@ If REGEXP-FLAG is given use `query-replace-regexp'."
 (defvar anything-c-buffer-map
   (let ((map (copy-keymap anything-map)))
     (define-key map (kbd "C-c ?")     'anything-c-buffer-help)
-    (define-key map (kbd "M-g s")     'anything-buffer-run-grep)
-    (define-key map (kbd "M-g z")     'anything-buffer-run-zgrep)
+    ;; (define-key map (kbd "M-g s")     'anything-buffer-run-grep)
+    ;; (define-key map (kbd "M-g z")     'anything-buffer-run-zgrep)
     (define-key map (kbd "C-o")       'anything-buffer-switch-other-window)
     (define-key map (kbd "C-c C-o")   'anything-buffer-switch-other-frame)
     (define-key map (kbd "C-=")       'anything-buffer-diff-persistent)
@@ -2364,8 +2364,8 @@ Don't set it directly, use instead `anything-ff-auto-update-initial-value'.")
             . anything-c-insert-file-name-completion-at-point)
            ("Open file externally `C-c C-x, C-u to choose'"
             . anything-c-open-file-externally)
-           ("Grep File(s) `M-g s, C-u Recurse'" . anything-find-files-grep)
-           ("Zgrep File(s) `M-g z, C-u Recurse'" . anything-ff-zgrep)
+           ;; ("Grep File(s) `M-g s, C-u Recurse'" . anything-find-files-grep)
+           ;; ("Zgrep File(s) `M-g z, C-u Recurse'" . anything-ff-zgrep)
            ("Switch to Eshell `M-e'" . anything-ff-switch-to-eshell)
            ("Eshell command on file(s) `M-!, C-u run on all marked at once.'"
             . anything-find-files-eshell-command-on-file)
@@ -2787,9 +2787,9 @@ See `anything-ff-serial-rename-1'."
 
 (defvar anything-find-files-map
   (let ((map (copy-keymap anything-map)))
-    (define-key map (kbd "M-g s")         'anything-ff-run-grep)
-    (define-key map (kbd "M-g p")         'anything-ff-run-pdfgrep)
-    (define-key map (kbd "M-g z")         'anything-ff-run-zgrep)
+    ;; (define-key map (kbd "M-g s")         'anything-ff-run-grep)
+    ;; (define-key map (kbd "M-g p")         'anything-ff-run-pdfgrep)
+    ;; (define-key map (kbd "M-g z")         'anything-ff-run-zgrep)
     (define-key map (kbd "M-R")           'anything-ff-run-rename-file)
     (define-key map (kbd "M-C")           'anything-ff-run-copy-file)
     (define-key map (kbd "M-B")           'anything-ff-run-byte-compile-file)
@@ -4183,8 +4183,8 @@ See Man locate for more infos.
 
 (defvar anything-generic-files-map
   (let ((map (copy-keymap anything-map)))
-    (define-key map (kbd "M-g s")   'anything-ff-run-grep)
-    (define-key map (kbd "M-g p")   'anything-ff-run-pdfgrep)
+    ;; (define-key map (kbd "M-g s")   'anything-ff-run-grep)
+    ;; (define-key map (kbd "M-g p")   'anything-ff-run-pdfgrep)
     (define-key map (kbd "M-D")     'anything-ff-run-delete-file)
     (define-key map (kbd "C-o")     'anything-ff-run-switch-other-window)
     (define-key map (kbd "M-i")     'anything-ff-properties-persistent)
